@@ -48,5 +48,5 @@ The figure below illustrates this behavior using an example.
 1. Later, the joystick is set to a negative position for one time unit, making the reference speed to decrease as well.
 
 ### The guide for this project:
-[Click me for the guide]("http://docs.inf.mit.bme.hu/rete-lab-lecture-notes/retelab1-lab2-vcs-ci-exercises.pdf")
+[Click me for the guide](http://docs.inf.mit.bme.hu/rete-lab-lecture-notes/retelab1-lab2-vcs-ci-exercises.pdf)
 ~~I shoud be crossed out~~
