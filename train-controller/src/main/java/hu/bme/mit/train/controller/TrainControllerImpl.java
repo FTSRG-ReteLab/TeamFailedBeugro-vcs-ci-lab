@@ -1,7 +1,7 @@
 package hu.bme.mit.train.controller;
 
 import hu.bme.mit.train.interfaces.TrainController;
-
+// this is doing magic
 public class TrainControllerImpl implements TrainController {
 
 	private int step = 0;
@@ -22,7 +22,7 @@ public class TrainControllerImpl implements TrainController {
 
 		enforceSpeedLimit();
 	}
-
+//some more magic
 	@Override
 	public int getReferenceSpeed() {
 		return referenceSpeed;
@@ -40,7 +40,7 @@ public class TrainControllerImpl implements TrainController {
 			referenceSpeed = speedLimit;
 		}
 	}
-
+//this is not magic just plain old java
 	@Override
 	public void setJoystickPosition(int joystickPosition) {
 		this.step = joystickPosition;		
