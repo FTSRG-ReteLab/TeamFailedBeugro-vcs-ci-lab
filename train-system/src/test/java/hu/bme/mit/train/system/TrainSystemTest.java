@@ -50,5 +50,13 @@ public class TrainSystemTest {
 		Assert.assertEquals(0, controller.getReferenceSpeed());
 	}
 
+	@Test
+	public void Calculating()
+	{
+		int a = 2;
+		a /= 2;
+		Assert.assertEquals(1, a);
+	}
+
 	
 }
