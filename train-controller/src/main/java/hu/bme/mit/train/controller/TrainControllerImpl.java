@@ -40,7 +40,7 @@ public class TrainControllerImpl implements TrainController {
 			referenceSpeed = speedLimit;
 		}
 	}
-//this is not magic just plain old javascript
+//this is not magic just plain old java
 	@Override
 	public void setJoystickPosition(int joystickPosition) {
 		this.step = joystickPosition;		
