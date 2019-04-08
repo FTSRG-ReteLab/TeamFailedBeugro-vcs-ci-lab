@@ -10,6 +10,10 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
 
+import hu.bme.mit.train.interfaces.TrainController;
+import hu.bme.mit.train.interfaces.TrainSensor;
+import hu.bme.mit.train.interfaces.TrainUser;
+
 public class TrainSensorTest {
 
     private TrainController mockController;// = new TrainControllerImpl();
@@ -17,7 +21,8 @@ public class TrainSensorTest {
 	private TrainSensor sensor; // = new TrainSensorImpl(controller, user);
 
     @Before
-    public void before() {
+    public void before() 
+    {
         mockController = mock(TrainController.class);
         mockUser = mock(TrainUser.class);
         sensor = new TrainSensorImpl(mockController, mockUser);
@@ -37,6 +42,21 @@ public class TrainSensorTest {
     {
         sensor.overrideSpeedLimit(10);
         verify(mockUser, times(1)).setAlarmState(true);
+    }
+
+    public void fivehundredPlussSpeedLimit()
+    {
+        sensor.overrideSpeedLimit(501);
+        verify(mockUser, times(1)).setAlarmState(true);
+    }
+
+
+    @Test
+    public void regularSpeedLimit()
+    {
+        sensor.overrideSpeedLimit(30);
+        verify(mockUser, times(0)).setAlarmState(true);
+        verify(mockController, times(1)).setSpeedLimit(30);
     }
 
 }
