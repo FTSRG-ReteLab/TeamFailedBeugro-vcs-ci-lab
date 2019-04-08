@@ -1,5 +1,10 @@
 package hu.bme.mit.train.sensor;
 
+
+
+import hu.bme.mit.train.interfaces.TrainController;
+import hu.bme.mit.train.interfaces.TrainSensor;
+import hu.bme.mit.train.interfaces.TrainUser;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,9 +18,25 @@ public class TrainSensorTest {
 
     @Before
     public void before() {
-        mockController = mock(TrainControllerImpl.class);
-        mockUser = mock(TrainUserImpl.class);
+        mockController = mock(TrainController.class);
+        mockUser = mock(TrainUser.class);
         sensor = new TrainSensorImpl(mockController, mockUser);
+
+        when(mockController.getReferenceSpeed()).thenReturn(50);
+    }
+
+    @Test
+    public void negativeSpeedLimit()
+    {
+        sensor.overrideSpeedLimit(-10);
+        verify(mockUser, times(1)).setAlarmState(true);
+    }
+
+    @Test
+    public void lessThanHalfSpeedLimit()
+    {
+        sensor.overrideSpeedLimit(10);
+        verify(mockUser, times(1)).setAlarmState(true);
     }
 
 }
