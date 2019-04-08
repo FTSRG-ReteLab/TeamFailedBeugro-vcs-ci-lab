@@ -31,7 +31,7 @@ public class Tachograph {
 	public void collectData(TrainUser user, TrainController controller)
 	{
 		if(count < 10)
-		table.put(count++, user.getJoystickPosition(),controller.getReferenceSpeed());
+			table.put(count++, user.getJoystickPosition(),controller.getReferenceSpeed());
 	}
 	
 	public int size()
