@@ -7,13 +7,15 @@ import static org.mockito.Mockito.*;
 
 public class TrainSensorTest {
 
+    private TrainController mockController;// = new TrainControllerImpl();
+	private TrainUser mockUser;// = new TrainUserImpl(controller);
+	private TrainSensor sensor; // = new TrainSensorImpl(controller, user);
+
     @Before
     public void before() {
-        // TODO Add initializations
+        mockController = mock(TrainControllerImpl.class);
+        mockUser = mock(TrainUserImpl.class);
+        sensor = new TrainSensorImpl(mockController, mockUser);
     }
 
-    @Test
-    public void ThisIsAnExampleTestStub() {
-        // TODO Delete this and add test cases based on the issues
-    }
 }
