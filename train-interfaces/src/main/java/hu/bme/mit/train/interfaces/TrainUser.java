@@ -6,6 +6,8 @@ public interface TrainUser {
 
 	boolean getAlarmFlag();
 
+	void setAlarmState(boolean alarmState);
+
 	void overrideJoystickPosition(int joystickPosition);
 
 }
