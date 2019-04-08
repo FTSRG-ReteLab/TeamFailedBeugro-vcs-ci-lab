@@ -77,8 +77,7 @@ public class TrainControllerImpl implements TrainController {
 		this.step = joystickPosition;	    
 	}
 
-	public synchronized void stopTrainController()
-	{
+	public synchronized void stopTrainController(){
 		running = false;
 	}
 
